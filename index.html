@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mylove IMIM</title>
+    <link rel="stylesheet" href="love_style.css">
+</head>
+<body>
+    <header>
+        <h1>mylove IMIM</h1>
+    </header>
+    <div class="gallery">
+        <div class="photo" onclick="showMessage(1)" style="background-image: url('IMG_0919.jpeg');"></div>
+        <div class="photo" onclick="showMessage(2)" style="background-image: url('IMG_0920.jpeg');"></div>
+        <div class="photo" onclick="showMessage(3)" style="background-image: url('IMG_0921.jpeg');"></div>
+        <div class="photo" onclick="showMessage(4)" style="background-image: url('IMG_0926.jpeg');"></div>
+        <div class="photo" onclick="showMessage(5)" style="background-image: url('IMG_0927.jpeg');"></div>
+        <div class="photo" onclick="showMessage(6)" style="background-image: url('IMG_0928.jpeg');"></div>
+    </div>
+    <footer>
+        <p>Our Love Story</p>
+    </footer>
+
+    <script>
+        function showMessage(photoNumber) {
+            const messages = [
+                "You're my soulmate",
+                "Every day with you is a blessing",
+                "You make my heart skip a beat",
+                "I fall in love with you more each day",
+                "You're the best thing that ever happened to me",
+                "Our love is eternal"
+            ];
+            alert(messages[photoNumber - 1]);
+        }
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 2 + 3 + 's';
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        setInterval(createHeart, 300);
+    </script>
+</body>
+</html>
